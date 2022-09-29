@@ -74,8 +74,6 @@ public class TextRedacting
                             RemoveChar(ref text, cursor);
                             cursor = (cursor.x - 1, cursor.y);
                         }
-
-                        /* WHEN LINE CLEAR DELETE LINE */
                         break;
 
                     // UP _ DOWN
@@ -111,8 +109,7 @@ public class TextRedacting
                         text[cursor.y] = text[cursor.y].Insert(cursor.x - 1, $"{key.KeyChar}");
                         break;
                 }
-
-            /*  Cycle quit  */
+            
             if (key.Key == ConsoleKey.Escape) break;
             RenderLine(text[cursor.y], cursor.y);
             //RenderLine(text[prevline], prevline); // КОСТЫЛЬ
