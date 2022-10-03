@@ -17,7 +17,7 @@ public class TextRedacting
     {
         #region Variables
         ConsoleKeyInfo key;
-        int prevline; // КОСТЫЛЬ
+        int prevline;
         List<string> text = new List<string>();
         # endregion
 
@@ -38,7 +38,7 @@ public class TextRedacting
 
             key = Console.ReadKey();
 
-            prevline = cursor.y; // КОСТЫЛЬ
+            prevline = cursor.y;
 
             Console.SetWindowSize(window.Size.X, window.Size.Y);
             Console.SetBufferSize(window.Size.X, window.Size.Y);
@@ -112,7 +112,6 @@ public class TextRedacting
             
             if (key.Key == ConsoleKey.Escape) break;
             RenderLine(text[cursor.y], cursor.y);
-            //RenderLine(text[prevline], prevline); // КОСТЫЛЬ
             Console.SetCursorPosition(cursor.x, cursor.y);
         }
         return text;
